@@ -3,6 +3,7 @@ package fii.practic.health.boundry.controller;
 import fii.practic.health.boundry.dto.DoctorDTO;
 import fii.practic.health.boundry.exceptions.BadRequestException;
 import fii.practic.health.boundry.exceptions.NotFoundException;
+import fii.practic.health.control.service.EmailServiceImpl;
 import fii.practic.health.control.service.PatientService;
 import fii.practic.health.entity.model.Doctor;
 import fii.practic.health.control.service.DoctorService;
@@ -10,8 +11,10 @@ import fii.practic.health.entity.model.Patient;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.mail.SimpleMailMessage;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -23,12 +26,17 @@ public class DoctorController {
     private DoctorService doctorService;
     private ModelMapper modelMapper;
     private PatientService patientService;
+    private EmailServiceImpl emailService;
+    private SimpleMailMessage template;
 
     @Autowired
-    public DoctorController(DoctorService doctorService, ModelMapper modelMapper, PatientService patientService) {
+    public DoctorController(DoctorService doctorService, ModelMapper modelMapper, PatientService patientService,
+                            EmailServiceImpl emailService, @Qualifier("doctorCreatedTemplate") SimpleMailMessage template) {
         this.doctorService = doctorService;
         this.modelMapper = modelMapper;
         this.patientService = patientService;
+        this.emailService = emailService;
+        this.template = template;
     }
 
     @GetMapping
@@ -59,6 +67,8 @@ public class DoctorController {
     @PostMapping
     public ResponseEntity<DoctorDTO> save(@RequestBody DoctorDTO doctorDTO){
         Doctor newDoctor = doctorService.save(modelMapper.map(doctorDTO, Doctor.class));
+        String text = String.format(template.getText(),doctorDTO.getFirstName(), doctorDTO.getLastName(), newDoctor.toString());
+        emailService.sendSimpleEmail(doctorDTO.getEmail().getEmail(),"Fii practic", text);
 
         return new ResponseEntity<>(modelMapper.map(newDoctor, DoctorDTO.class), HttpStatus.CREATED);
     }
@@ -87,6 +97,7 @@ public class DoctorController {
         if(dbDoctor == null){
             throw new NotFoundException(String.format("Doctor with id %d was not found", id));
         }
+
 
         modelMapper.getConfiguration().setSkipNullEnabled(false);
         modelMapper.map(doctorDTO, dbDoctor);

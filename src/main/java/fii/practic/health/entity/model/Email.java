@@ -12,6 +12,7 @@ public class Email {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @javax.validation.constraints.Email(message = "Email should be valid")
     private String email;
 
     public Long getId() {
