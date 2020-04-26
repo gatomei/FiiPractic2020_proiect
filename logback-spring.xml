@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <property name="LOG_PATH" value="./logs"/>
+    <include resource="org/springframework/boot/logging/logback/file-appender.xml" />
+    <include resource="org/springframework/boot/logging/logback/console-appender.xml" />
+
+    <appender name="schedulerLog" class="ch.qos.logback.core.FileAppender">
+        <file>${LOG_PATH}/schedulerLog.log</file>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <Pattern>%d{dd-MM-yyyy HH:mm:ss.SSS} [%thread] %-5level %logger{36}.%M - %msg%n</Pattern>
+        </encoder>
+    </appender>
+
+    <appender name="springLog" class="ch.qos.logback.core.FileAppender">
+        <file>${LOG_PATH}/applicationLog.log</file>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <Pattern>%d{dd-MM-yyyy HH:mm:ss.SSS} [%thread] %-5level %logger{36}.%M - %msg%n</Pattern>
+        </encoder>
+    </appender>
+
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <Pattern>%d{dd-MM-yyyy HH:mm:ss.SSS} %magenta([%thread]) %highlight(%-5level) %logger.%M - %msg%n</Pattern>
+        </encoder>
+    </appender>
+
+    <root level="INFO">
+        <appender-ref ref="springLog" />
+        <appender-ref ref="console" />
+    </root>
+    <logger name="org.springframework.web" level="INFO">
+        <appender-ref ref="console" />
+    </logger>
+
+
+    <logger name="fii.practic.health.boundry.controller.AppointmentScheduler" additivity="false" level="info">
+        <appender-ref ref="schedulerLog" />
+    </logger>
+
+</configuration>

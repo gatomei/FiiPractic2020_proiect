@@ -10,6 +10,8 @@ import fii.practic.health.control.service.DoctorService;
 import fii.practic.health.entity.model.Patient;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpStatus;
@@ -28,6 +30,8 @@ public class DoctorController {
     private PatientService patientService;
     private EmailServiceImpl emailService;
     private SimpleMailMessage template;
+
+    private static final Logger logger = LoggerFactory.getLogger(DoctorController.class);
 
     @Autowired
     public DoctorController(DoctorService doctorService, ModelMapper modelMapper, PatientService patientService,
@@ -51,7 +55,9 @@ public class DoctorController {
         Doctor doctor = doctorService.getById(id);
 
         if(doctor == null){
+            logger.error(String.format("Doctor with id %d was not found", id));
             throw new NotFoundException(String.format("Doctor with id %d was not found", id));
+
         }
 
         return new ResponseEntity<>(modelMapper.map(doctor, DoctorDTO.class), HttpStatus.OK);
@@ -67,8 +73,9 @@ public class DoctorController {
     @PostMapping
     public ResponseEntity<DoctorDTO> save(@RequestBody DoctorDTO doctorDTO){
         Doctor newDoctor = doctorService.save(modelMapper.map(doctorDTO, Doctor.class));
-        String text = String.format(template.getText(),doctorDTO.getFirstName(), doctorDTO.getLastName(), newDoctor.toString());
-        emailService.sendSimpleEmail(doctorDTO.getEmail().getEmail(),"Fii practic", text);
+        String text = String.format(template.getText(),newDoctor.getFirstName(), newDoctor.getLastName(), newDoctor.toString());
+        emailService.sendSimpleEmail(doctorDTO.getEmail().getEmail(),"Doctor entity created", text);
+        logger.info(String.format("Doctor entity with id %d  was successfully created.",newDoctor.getId()));
 
         return new ResponseEntity<>(modelMapper.map(newDoctor, DoctorDTO.class), HttpStatus.CREATED);
     }
@@ -79,7 +86,7 @@ public class DoctorController {
 
         if(dbDoctor != null) {
             modelMapper.map(doctorDTO, dbDoctor);
-
+            logger.info(String.format("Doctor entity with id %d was successfully updated.", dbDoctor.getId()));
             return new ResponseEntity<>(modelMapper.map(doctorService.patch(dbDoctor), DoctorDTO.class), HttpStatus.OK);
         }
 
@@ -103,6 +110,8 @@ public class DoctorController {
         modelMapper.map(doctorDTO, dbDoctor);
         modelMapper.getConfiguration().setSkipNullEnabled(true);
 
+        logger.info(String.format("Doctor entity with id %d was successfully updated.", dbDoctor.getId()));
+
         return new ResponseEntity<>(modelMapper.map(doctorService.update(dbDoctor), DoctorDTO.class), HttpStatus.OK);
     }
 
@@ -120,6 +129,8 @@ public class DoctorController {
             dbDoctor.setPatients(null);
             doctorService.save(dbDoctor);
             doctorService.delete(dbDoctor);
+
+            logger.info(String.format("Doctor entity with id %d was successfully deleted.", dbDoctor.getId()));
         }
         return ResponseEntity.noContent().build();
     }

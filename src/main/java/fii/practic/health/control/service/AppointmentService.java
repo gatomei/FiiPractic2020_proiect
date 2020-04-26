@@ -2,6 +2,7 @@ package fii.practic.health.control.service;
 
 import fii.practic.health.entity.model.Appointment;
 
+import java.util.Date;
 import java.util.List;
 
 public interface AppointmentService {
@@ -21,4 +22,8 @@ public interface AppointmentService {
     List<Appointment> getFutureAppointmentsByDoctor(Long id);
 
     List<Appointment> getFutureAppointments();
+
+    List<Appointment> getDoneAppointments();
+
+    boolean intervalIsBooked(Appointment appointment);
 }

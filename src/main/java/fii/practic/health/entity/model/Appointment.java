@@ -20,16 +20,14 @@ public class Appointment {
 
     private Long patientId;
 
-    @Future(message="Appointment must be in the future")
     private Date startTime;
 
-    @Future(message="Appointment must be in the future")
     private Date endTime;
 
     @Size(min=1, max=256, message = "Cause can have maximum 256 characters")
     private String cause;
 
-    private boolean took_place;
+    private boolean tookPlace;
 
     public Long getId() {
         return id;
@@ -79,11 +77,11 @@ public class Appointment {
         this.cause = cause;
     }
 
-    public boolean isTook_place() {
-        return took_place;
+    public boolean getTookPlace() {
+        return tookPlace;
     }
 
-    public void setTook_place(boolean took_place) {
-        this.took_place = took_place;
+    public void setTookPlace(boolean tookPlace) {
+        this.tookPlace = tookPlace;
     }
 }

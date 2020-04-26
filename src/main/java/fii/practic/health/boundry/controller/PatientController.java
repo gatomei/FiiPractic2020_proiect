@@ -8,6 +8,8 @@ import fii.practic.health.control.service.DoctorService;
 import fii.practic.health.control.service.PatientService;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -22,6 +24,8 @@ public class PatientController {
     private PatientService patientService;
     private DoctorService doctorService;
     private ModelMapper modelMapper;
+
+    private static final Logger logger = LoggerFactory.getLogger(PatientController.class);
 
     @Autowired
     public PatientController(PatientService patientService, DoctorService doctorService, ModelMapper modelMapper) {
@@ -48,6 +52,7 @@ public class PatientController {
     public ResponseEntity<PatientDTO> save(@RequestBody PatientDTO patientDTO){
         Patient newPatient = patientService.save(modelMapper.map(patientDTO, Patient.class));
 
+        logger.info(String.format("New patient entity with id %d was successfully created", newPatient.getId()));
         return new ResponseEntity<>(modelMapper.map(newPatient, PatientDTO.class), HttpStatus.CREATED);
     }
 
@@ -57,7 +62,7 @@ public class PatientController {
 
         if(dbPatient != null) {
             modelMapper.map(patientDTO, dbPatient);
-
+            logger.info(String.format("Patient entity with id %d was successfully updated", dbPatient.getId()));
             return new ResponseEntity<>(modelMapper.map(patientService.patch(dbPatient), PatientDTO.class), HttpStatus.OK);
         }
 
@@ -73,6 +78,8 @@ public class PatientController {
             modelMapper.map(patientDTO, dbPatient);
             modelMapper.getConfiguration().setSkipNullEnabled(true);
 
+            logger.info(String.format("Patient entity with id %d was successfully updated", dbPatient.getId()));
+
             return new ResponseEntity<>(modelMapper.map(patientService.update(dbPatient), PatientDTO.class), HttpStatus.OK);
         }
 
@@ -85,6 +92,8 @@ public class PatientController {
 
         if(dbPatient != null){
             patientService.delete(dbPatient);
+
+            logger.info(String.format("Patient entity with id %d was successfully deleted", dbPatient.getId()));
         }
 
         return ResponseEntity.noContent().build();

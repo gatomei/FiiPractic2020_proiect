@@ -21,33 +21,37 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.web.bind.annotation.*;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.time.LocalDateTime;
 import java.util.List;
 
 @RestController
 @RequestMapping(value="/api/appointments")
 public class AppointmentController {
 
-    Logger logger = LoggerFactory.getLogger(AppointmentController.class);
+    private static final Logger logger = LoggerFactory.getLogger(AppointmentController.class);
 
     private AppointmentService appointmentService;
     private ModelMapper modelMapper;
     private DoctorService doctorService;
     private PatientService patientService;
     private EmailServiceImpl emailService;
-    private SimpleMailMessage template;
+    private SimpleMailMessage templatePatient;
+    private SimpleMailMessage templateDoctor;
 
     @Autowired
     public AppointmentController(AppointmentService appointmentService, ModelMapper modelMapper, DoctorService doctorService,
-                                 PatientService patientService, EmailServiceImpl emailService, @Qualifier("appointmentCreatedTemplate") SimpleMailMessage template)
+                                 PatientService patientService, EmailServiceImpl emailService,
+                                 @Qualifier("appointmentCreatedPatientTemplate") SimpleMailMessage templatePatient,
+                                 @Qualifier("appointmentCreatedDoctorTemplate") SimpleMailMessage templateDoctor)
     {
         this.appointmentService = appointmentService;
         this.modelMapper = modelMapper;
         this.doctorService = doctorService;
         this.patientService = patientService;
         this.emailService = emailService;
-        this.template = template;
+        this.templatePatient = templatePatient;
+        this.templateDoctor = templateDoctor;
     }
 
     @PostMapping
@@ -80,12 +84,29 @@ public class AppointmentController {
             throw new BadRequestException("Appointment startTime should be before endTime");
 
         }
+        if(startTime.before(new Date()))
+        {
+            throw new BadRequestException("Appointment date must be in the future");
 
+        }
+        if(appointmentService.intervalIsBooked(modelMapper.map(appointmentDTO, Appointment.class)))
+        {
+            throw  new BadRequestException("Appointment date interval is already booked");
+        }
         Appointment newAppointment = appointmentService.save(modelMapper.map(appointmentDTO, Appointment.class));
 
-        String text = String.format(template.getText(),patientDb.getFirstName(), patientDb.getLastName(),doctorDb.getFirstName(), doctorDb.getLastName(), newAppointment.getStartTime().toString());
-        //emailService.sendSimpleEmail(patientDb.getEmail().getEmail(), "New appointment",text);
-        emailService.sendSimpleEmail(doctorDb.getEmail().getEmail(), "New appointment", text);
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        SimpleDateFormat timeFormat = new SimpleDateFormat("HH:mm:ss");
+
+        String formatedDate = dateFormat.format(newAppointment.getStartTime());
+        String formatedTime = timeFormat.format(newAppointment.getStartTime());
+
+        String textPatient = String.format(templatePatient.getText(),doctorDb.getFirstName(), doctorDb.getLastName(), formatedDate, formatedTime);
+        String textDoctor = String.format(templateDoctor.getText(),patientDb.getFirstName(), patientDb.getLastName(), formatedDate, formatedTime);
+
+        emailService.sendSimpleEmail(patientDb.getEmail().getEmail(), "New appointment",textPatient);
+        emailService.sendSimpleEmail(doctorDb.getEmail().getEmail(), "New appointment", textDoctor);
+
         logger.info(String.format("Appointment with id %d was created",newAppointment.getId()));
 
         return new ResponseEntity<>(modelMapper.map(newAppointment, AppointmentDTO.class), HttpStatus.CREATED);
@@ -107,7 +128,6 @@ public class AppointmentController {
 
         if(appointmentDb!=null)
         {
-            //date must be at least one hour from current moment
            Date startTime =appointmentDb.getStartTime();
            Date now = new Date();
            if(startTime.before(now))
@@ -120,7 +140,9 @@ public class AppointmentController {
             if(startTime.after(next_hour))
             {
                 appointmentService.delete(appointmentDb);
+                logger.info(String.format("Appointment with id %d was successfully canceled", appointmentDb.getId()));
             }
+
             else
             {
                 throw new BadRequestException("An appointment which will occur in the next hour can't be canceled");

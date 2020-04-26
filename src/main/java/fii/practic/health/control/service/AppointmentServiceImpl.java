@@ -58,5 +58,18 @@ public class AppointmentServiceImpl  implements  AppointmentService{
         return appointmentRepository.findAppointmentsByStartTimeIsAfter(new Date());
     }
 
+    @Override
+    public List<Appointment> getDoneAppointments() {
+
+        Date now=new Date();
+        return appointmentRepository.findAppointmentsByEndTimeIsBeforeAndTookPlaceEquals(now, false);
+    }
+
+    @Override
+    public boolean intervalIsBooked(Appointment appointment) {
+        List<Appointment> appointments = appointmentRepository.findAppointmentsByDoctorIdAndStartTimeIsBeforeAndEndTimeIsAfter(appointment.getDoctorId(), appointment.getStartTime(), appointment.getStartTime());
+        return appointments != null;
+    }
+
 
 }

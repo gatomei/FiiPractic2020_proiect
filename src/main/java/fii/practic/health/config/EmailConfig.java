@@ -38,14 +38,22 @@ public class EmailConfig {
         LocalDateTime now = LocalDateTime.now();
         message.setText(
                 "Welcome,\n%s %s\nYour Entity was succesfully created today, "+dtf.format(now)+
-                        ".\nYour data is:%s\nKind regards,\nFiiPracticApp");
+                        ".\nYour data information is:%s\nKind regards,\nFiiPracticApp Team");
         return message;
     }
     @Bean
-    public SimpleMailMessage appointmentCreatedTemplate() {
+    public SimpleMailMessage appointmentCreatedPatientTemplate() {
         SimpleMailMessage message = new SimpleMailMessage();
         message.setText(
-                "Hi,\n\nAppointment created for patient %s %s at doctor %s %s.\nAppointment date:%s\n");
+                "Hello,\n\nYour appointment was created at doctor %s %s.\nAppointment will take place on date %s at time %s.\n\nKind regards,\nFiiPracticApp Team");
+        return message;
+    }
+
+    @Bean
+    public SimpleMailMessage appointmentCreatedDoctorTemplate() {
+        SimpleMailMessage message = new SimpleMailMessage();
+        message.setText(
+                "Hello,\n\nA new appointment was created for patient %s %s.\nAppointment will take place on date %s at time %s.\n\nKind regards,\nFiiPracticApp Team");
         return message;
     }
 }
