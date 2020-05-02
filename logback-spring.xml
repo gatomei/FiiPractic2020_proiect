@@ -4,8 +4,8 @@
     <include resource="org/springframework/boot/logging/logback/file-appender.xml" />
     <include resource="org/springframework/boot/logging/logback/console-appender.xml" />
 
-    <appender name="schedulerLog" class="ch.qos.logback.core.FileAppender">
-        <file>${LOG_PATH}/schedulerLog.log</file>
+    <appender name="scheduledTaskLog" class="ch.qos.logback.core.FileAppender">
+        <file>${LOG_PATH}/scheduledTaskLog.log</file>
         <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
             <Pattern>%d{dd-MM-yyyy HH:mm:ss.SSS} [%thread] %-5level %logger{36}.%M - %msg%n</Pattern>
         </encoder>
@@ -33,8 +33,8 @@
     </logger>
 
 
-    <logger name="fii.practic.health.boundry.controller.AppointmentScheduler" additivity="false" level="info">
-        <appender-ref ref="schedulerLog" />
+    <logger name="fii.practic.health.boundry.controller.AppointmentTaskController" additivity="false" level="info">
+        <appender-ref ref="scheduledTaskLog" />
     </logger>
 
 </configuration>

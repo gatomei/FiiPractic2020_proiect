@@ -36,12 +36,12 @@ public class Doctor extends Person{
     @Override
     public String toString() {
         return "Doctor{" +
-                " firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", speciality='" + speciality + '\'' +
-                ", email=" + email.getEmail() +
-                ", address=" + address.getAddress() +
-                ", phoneNumber=" + phoneNumber.getPhoneNumber() +
+                " firstName:'" + firstName + '\'' +
+                ", lastName:'" + lastName + '\'' +
+                ", speciality:'" + speciality + '\'' +
+                ", email:" + email.getEmail() +'\'' +
+                ", address:" + address.getAddress() +'\'' +
+                ", phoneNumber:" + phoneNumber.getPhoneNumber() +'\'' +
                 '}';
     }
 }

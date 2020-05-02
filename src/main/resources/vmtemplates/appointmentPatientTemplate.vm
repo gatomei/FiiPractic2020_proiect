@@ -1,0 +1,14 @@
+<html>
+<body>
+<h3>Dear ${patient.getFirstName()} ${patient.getLastName()},</h3>
+
+<div>
+    <p>A new appointment was created at doctor ${doctor.getFirstName()} ${doctor.getLastName()} with cause ${cause}.
+        Appointment will take place on date ${date} at time ${time}</p>
+    <br><br>
+
+    <p>Kind regards,</p><br>
+    <p>FiiPracticTeam</p>
+</div>
+</body>
+</html>

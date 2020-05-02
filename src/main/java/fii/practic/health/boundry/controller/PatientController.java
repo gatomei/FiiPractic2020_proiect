@@ -34,6 +34,10 @@ public class PatientController {
         this.modelMapper = modelMapper;
     }
 
+    /**
+     * Searches for and returns a list of all the patients
+     * @return ResponseEntity containing a list of patients
+     */
     @GetMapping
     public ResponseEntity<List<PatientDTO>> getPatients() {
         List<Patient> patients = patientService.getAll();
@@ -41,6 +45,11 @@ public class PatientController {
         return new ResponseEntity<>((List<PatientDTO>) modelMapper.map(patients, new TypeToken<List<PatientDTO>>(){}.getType()), HttpStatus.OK);
     }
 
+    /**
+     * Searches for and returns a patient identified by his id
+     * @param id the patient's id
+     * @return ResponseEntity containing the found patient
+     */
     @GetMapping(value = "/{id}")
     public ResponseEntity<PatientDTO> getById(@PathVariable("id") Long id) {
         Patient patient = patientService.getById(id);
@@ -48,6 +57,11 @@ public class PatientController {
         return new ResponseEntity<>(modelMapper.map(patient, PatientDTO.class), HttpStatus.OK);
     }
 
+    /**
+     * Creates a new patient
+     * @param patientDTO contains the patient entity data, given by the client
+     * @return ResponseEntity containing the new created patient
+     */
     @PostMapping
     public ResponseEntity<PatientDTO> save(@RequestBody PatientDTO patientDTO){
         Patient newPatient = patientService.save(modelMapper.map(patientDTO, Patient.class));
@@ -56,6 +70,13 @@ public class PatientController {
         return new ResponseEntity<>(modelMapper.map(newPatient, PatientDTO.class), HttpStatus.CREATED);
     }
 
+    /**
+     * Partially updates an existing patient's information
+     * The patient is identified by his id
+     * @param id identifies the patient
+     * @param patientDTO the new information that need to be updated
+     * @return ResponseEntity containing the new updated patient
+     */
     @PatchMapping(value = "/{id}")
     public ResponseEntity<PatientDTO> patch(@PathVariable Long id, @RequestBody PatientDTO patientDTO){
         Patient dbPatient = patientService.getById(id);
@@ -69,6 +90,12 @@ public class PatientController {
         return null;
     }
 
+    /**
+     * Updates an existing patient's information
+     * @param id uniqeuly identifies the patient
+     * @param patientDTO the patient new info
+     * @return ResponseEntity containing the new updated patient
+     */
     @PutMapping(value = "/{id}")
     public ResponseEntity<PatientDTO> update(@PathVariable Long id, @RequestBody PatientDTO patientDTO){
         Patient dbPatient = patientService.getById(id);
@@ -86,6 +113,11 @@ public class PatientController {
         return null;
     }
 
+    /**
+     * Deletes an existing patient entity
+     * @param id uniquely identifies the patient
+     * @return ResponseEntity with no content
+     */
     @DeleteMapping(value = "/{id}")
     public ResponseEntity<Void> delete(@PathVariable Long id){
         Patient dbPatient = patientService.getById(id);

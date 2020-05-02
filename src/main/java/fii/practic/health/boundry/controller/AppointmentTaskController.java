@@ -11,13 +11,18 @@ import java.util.List;
 
 
 @Component
-public class AppointmentScheduler {
-    private static final Logger logger = LoggerFactory.getLogger(AppointmentScheduler.class);
+public class AppointmentTaskController {
+    private static final Logger logger = LoggerFactory.getLogger(AppointmentTaskController.class);
 
     @Autowired
     private AppointmentService appointmentService;
 
 
+    /**
+     * Spring job that executes every 5 minutes
+     * Searches for the appointments that took_place
+     * Marks the appointments that took_place as so
+     */
     @Scheduled(fixedRate = 300000)
     public void reportCurrentTime() {
         List<Appointment> appointmentsDone = appointmentService.getDoneAppointments();

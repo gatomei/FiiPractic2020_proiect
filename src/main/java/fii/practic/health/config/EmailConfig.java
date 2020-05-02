@@ -1,16 +1,18 @@
 package fii.practic.health.config;
 
+import org.apache.velocity.app.VelocityEngine;
+import org.apache.velocity.exception.VelocityException;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.JavaMailSenderImpl;
+import org.springframework.ui.velocity.VelocityEngineFactory;
 
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
+import java.io.IOException;
 import java.util.Properties;
 
 @Configuration
+@SuppressWarnings("deprecation")
 public class EmailConfig {
     @Bean
     public JavaMailSender getJavaMailSender() {
@@ -30,30 +32,17 @@ public class EmailConfig {
         return mailSender;
     }
 
+    @Bean
+    public VelocityEngine getVelocityEngine() throws VelocityException, IOException {
+        VelocityEngineFactory factory = new VelocityEngineFactory();
+        Properties props = new Properties();
+        props.put("resource.loader", "class");
+        props.put("class.resource.loader.class", "org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader");
 
-    @Bean
-    public SimpleMailMessage doctorCreatedTemplate() {
-        SimpleMailMessage message = new SimpleMailMessage();
-        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
-        LocalDateTime now = LocalDateTime.now();
-        message.setText(
-                "Welcome,\n%s %s\nYour Entity was succesfully created today, "+dtf.format(now)+
-                        ".\nYour data information is:%s\nKind regards,\nFiiPracticApp Team");
-        return message;
-    }
-    @Bean
-    public SimpleMailMessage appointmentCreatedPatientTemplate() {
-        SimpleMailMessage message = new SimpleMailMessage();
-        message.setText(
-                "Hello,\n\nYour appointment was created at doctor %s %s.\nAppointment will take place on date %s at time %s.\n\nKind regards,\nFiiPracticApp Team");
-        return message;
+        factory.setVelocityProperties(props);
+        return factory.createVelocityEngine();
     }
 
-    @Bean
-    public SimpleMailMessage appointmentCreatedDoctorTemplate() {
-        SimpleMailMessage message = new SimpleMailMessage();
-        message.setText(
-                "Hello,\n\nA new appointment was created for patient %s %s.\nAppointment will take place on date %s at time %s.\n\nKind regards,\nFiiPracticApp Team");
-        return message;
-    }
+
+
 }

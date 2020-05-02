@@ -5,7 +5,7 @@ import fii.practic.health.boundry.exceptions.BadRequestException;
 import fii.practic.health.boundry.exceptions.NotFoundException;
 import fii.practic.health.control.service.AppointmentService;
 import fii.practic.health.control.service.DoctorService;
-import fii.practic.health.control.service.EmailServiceImpl;
+import fii.practic.health.control.service.MailService;
 import fii.practic.health.control.service.PatientService;
 import fii.practic.health.entity.model.Appointment;
 import fii.practic.health.entity.model.Doctor;
@@ -35,25 +35,34 @@ public class AppointmentController {
     private ModelMapper modelMapper;
     private DoctorService doctorService;
     private PatientService patientService;
-    private EmailServiceImpl emailService;
-    private SimpleMailMessage templatePatient;
-    private SimpleMailMessage templateDoctor;
+    private MailService emailService;
+
 
     @Autowired
     public AppointmentController(AppointmentService appointmentService, ModelMapper modelMapper, DoctorService doctorService,
-                                 PatientService patientService, EmailServiceImpl emailService,
-                                 @Qualifier("appointmentCreatedPatientTemplate") SimpleMailMessage templatePatient,
-                                 @Qualifier("appointmentCreatedDoctorTemplate") SimpleMailMessage templateDoctor)
+                                 PatientService patientService, MailService emailService)
     {
         this.appointmentService = appointmentService;
         this.modelMapper = modelMapper;
         this.doctorService = doctorService;
         this.patientService = patientService;
         this.emailService = emailService;
-        this.templatePatient = templatePatient;
-        this.templateDoctor = templateDoctor;
     }
 
+
+    /**
+     * Creates a new appointment for a patient at his doctor, if the appointment's data is correct
+     * If the patient with the specified id does not exist, thows NotFoundException
+     * If the doctor with the specified id does not exist, thows NotFoundException
+     * If the specified patient does not correspond to the specified doctor, throws BadRequestException
+     * If the appointment's startTime is not in the future throws BadRequestException
+     * If the appointment's startTime is not before appointment's endTime,throws BadRequestException
+     * If the appointment's interval is already booked by somebody else,throws BadRequestException
+     * @param appointmentDTO contains appointment object data
+     * @return
+     * @throws NotFoundException
+     * @throws BadRequestException
+     */
     @PostMapping
     public ResponseEntity<AppointmentDTO> save(@RequestBody AppointmentDTO appointmentDTO) throws NotFoundException, BadRequestException {
         Doctor doctorDb = doctorService.getById(appointmentDTO.getDoctorId());
@@ -93,25 +102,21 @@ public class AppointmentController {
         {
             throw  new BadRequestException("Appointment date interval is already booked");
         }
+
+
         Appointment newAppointment = appointmentService.save(modelMapper.map(appointmentDTO, Appointment.class));
-
-        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-        SimpleDateFormat timeFormat = new SimpleDateFormat("HH:mm:ss");
-
-        String formatedDate = dateFormat.format(newAppointment.getStartTime());
-        String formatedTime = timeFormat.format(newAppointment.getStartTime());
-
-        String textPatient = String.format(templatePatient.getText(),doctorDb.getFirstName(), doctorDb.getLastName(), formatedDate, formatedTime);
-        String textDoctor = String.format(templateDoctor.getText(),patientDb.getFirstName(), patientDb.getLastName(), formatedDate, formatedTime);
-
-        emailService.sendSimpleEmail(patientDb.getEmail().getEmail(), "New appointment",textPatient);
-        emailService.sendSimpleEmail(doctorDb.getEmail().getEmail(), "New appointment", textDoctor);
+        emailService.sendNewAppointmentDoctorEmail(doctorDb, patientDb, newAppointment);
+        emailService.sendNewAppointmentPatientEmail(patientDb,doctorDb, newAppointment);
 
         logger.info(String.format("Appointment with id %d was created",newAppointment.getId()));
 
         return new ResponseEntity<>(modelMapper.map(newAppointment, AppointmentDTO.class), HttpStatus.CREATED);
     }
 
+    /**
+     * Returns all the appointments
+     * @return ResponseEntity  that contains a list of all the appointments
+     */
     @GetMapping
     public ResponseEntity<List<AppointmentDTO>> getAppointments()
     {
@@ -121,6 +126,12 @@ public class AppointmentController {
 
     }
 
+    /**
+     * Cancels an appointment, if it exists and if it did not take place and if it will not occur in less than an hour
+     * @param id the id which identifies the appointment
+     * @return ResponseEntity with no content
+     * @throws BadRequestException if the appointment already took place or it will occur in less than an hour
+     */
     @DeleteMapping(value = "/{id}")
     public ResponseEntity<Void> cancel(@PathVariable Long id) throws BadRequestException {
 
@@ -134,6 +145,8 @@ public class AppointmentController {
            {
                throw new BadRequestException("An appointment which already took place in the past can't be canceled");
            }
+
+           //an appointment which will take place in less than an hour can not be canceled
 
            Date next_hour=new Date(System.currentTimeMillis() + 3600 * 1000);
 
@@ -153,6 +166,12 @@ public class AppointmentController {
 
     }
 
+    /**
+     * Returns a list of appointements at a specified doctor
+     * The doctor is identified by an id
+     * @param id the id which identifies uniquely a doctor
+     * @return ResponseEntity containing the list of appointments
+     */
     @GetMapping(value="/doctor/{id}")
     public ResponseEntity<List<AppointmentDTO>> getAppointmentsByDoctorId(@PathVariable Long id)
     {
@@ -162,6 +181,12 @@ public class AppointmentController {
 
     }
 
+    /**
+     *  Returns a list of appointements of a patient
+     *  The patient is specified by an id
+     * @param id the id which identifies uniquely a patient
+     * @return ResponseEntity containing the list of appointments
+     */
     @GetMapping(value="/patient/{id}")
     public ResponseEntity<List<AppointmentDTO>> getAppointmentsByPatientId(@PathVariable Long id)
     {
@@ -171,6 +196,10 @@ public class AppointmentController {
 
     }
 
+    /**
+     * Returns a list of all the future appointments
+     * @return ResponseEntity containing the list of appointments
+     */
     @GetMapping(value="/future")
     public ResponseEntity<List<AppointmentDTO>> getFutureAppointments()
     {
@@ -180,6 +209,12 @@ public class AppointmentController {
 
     }
 
+    /**
+     * Returns a list of all the future appointments, for a specified doctor
+     * The doctor is identified by an id
+     * @param id uniquely identifies the doctor
+     * @return ResponseEntity containing the list of appointments
+     */
     @GetMapping(value="/future/{id}")
     public ResponseEntity<List<AppointmentDTO>> getFutureAppointments(@PathVariable Long id)
     {

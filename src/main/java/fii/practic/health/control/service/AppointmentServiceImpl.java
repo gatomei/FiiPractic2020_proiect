@@ -18,10 +18,13 @@ public class AppointmentServiceImpl  implements  AppointmentService{
     public AppointmentServiceImpl(AppointmentRepository appointmentRepository) {
         this.appointmentRepository = appointmentRepository;
     }
+
+
     @Override
     public Appointment save(Appointment appointment) {
         return appointmentRepository.save(appointment);
     }
+
 
     @Override
     public List<Appointment> getAll() {
@@ -42,6 +45,7 @@ public class AppointmentServiceImpl  implements  AppointmentService{
     public List<Appointment> getAllByDoctor(Long id) {
         return appointmentRepository.findAppointmentsByDoctorId(id);
     }
+
 
     @Override
     public List<Appointment> getAllByPatient(Long id) {
@@ -68,7 +72,7 @@ public class AppointmentServiceImpl  implements  AppointmentService{
     @Override
     public boolean intervalIsBooked(Appointment appointment) {
         List<Appointment> appointments = appointmentRepository.findAppointmentsByDoctorIdAndStartTimeIsBeforeAndEndTimeIsAfter(appointment.getDoctorId(), appointment.getStartTime(), appointment.getStartTime());
-        return appointments != null;
+        return appointments.size() != 0;
     }
 
 
