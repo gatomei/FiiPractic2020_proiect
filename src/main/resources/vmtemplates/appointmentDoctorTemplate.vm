@@ -3,8 +3,8 @@
 <h3>Dear ${doctor.getFirstName()} ${doctor.getLastName()},</h3>
 
 <div>
-    <p>A new appointment was created for patient ${patient.getFirstName()} ${patient.getLastName()} with cause ${cause} .
-        Appointment will take place on date ${date} at time ${time}</p>
+    <p>A new appointment was created for patient ${patient.getFirstName()} ${patient.getLastName()} with cause ${cause}.
+        The appointment will take place on date ${date} at time ${time}</p>
     <br><br>
 
     <p>Kind regards,</p><br>

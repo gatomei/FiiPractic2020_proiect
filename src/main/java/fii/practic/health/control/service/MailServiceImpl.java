@@ -39,6 +39,7 @@ public class MailServiceImpl implements MailService {
 
     private final String doctorTemplatePath = "/vmtemplates/doctorTemplate.vm";
     private final String appointmentDoctorTemplatePath = "/vmtemplates/appointmentDoctorTemplate.vm";
+    private final String appointmentPatientTemplatePath = "/vmtemplates/appointmentPatientTemplate.vm";
 
 
     private static final Logger logger = LoggerFactory.getLogger(AppointmentController.class);
@@ -136,7 +137,7 @@ public class MailServiceImpl implements MailService {
             model.put("time", formatedTime);
             model.put("cause", appointment.getCause());
 
-            String text = getTemplateContent(model, appointmentDoctorTemplatePath);
+            String text = getTemplateContent(model, appointmentPatientTemplatePath);
 
             helper.setText(text, true);
         };

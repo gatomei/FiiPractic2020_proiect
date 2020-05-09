@@ -980,3 +980,385 @@ Consider defining a bean of type 'org.springframework.mail.SimpleMailMessage' in
 02-05-2020 13:10:04.128 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Completed initialization in 18 ms
 02-05-2020 13:13:32.214 [http-nio-8081-exec-3] INFO  f.p.h.b.c.AppointmentController.sendNewAppointmentDoctorEmail - Email New Appointment has been sent successfully
 02-05-2020 13:13:32.214 [http-nio-8081-exec-3] INFO  f.p.h.b.c.AppointmentController.save - Appointment with id 2 was created
+02-05-2020 14:12:24.487 [main] INFO  f.p.health.FiipracticApplication.logStarting - Starting FiipracticApplication on DESKTOP-3JQD55O with PID 14008 (D:\facultate\An3\yonder\proiect_final\target\classes started by Georgiana in D:\facultate\An3\yonder\proiect_final)
+02-05-2020 14:12:24.487 [main] INFO  f.p.health.FiipracticApplication.logStartupProfileInfo - The following profiles are active: dev
+02-05-2020 14:12:25.873 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+02-05-2020 14:12:25.951 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Finished Spring Data repository scanning in 68ms. Found 3 JPA repository interfaces.
+02-05-2020 14:12:26.465 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer.initialize - Tomcat initialized with port(s): 8081 (http)
+02-05-2020 14:12:26.480 [main] INFO  o.a.coyote.http11.Http11NioProtocol.log - Initializing ProtocolHandler ["http-nio-8081"]
+02-05-2020 14:12:26.480 [main] INFO  o.a.catalina.core.StandardService.log - Starting service [Tomcat]
+02-05-2020 14:12:26.480 [main] INFO  o.a.catalina.core.StandardEngine.log - Starting Servlet engine: [Apache Tomcat/9.0.31]
+02-05-2020 14:12:26.574 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring embedded WebApplicationContext
+02-05-2020 14:12:26.574 [main] INFO  o.s.web.context.ContextLoader.prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 1993 ms
+02-05-2020 14:12:26.730 [main] INFO  o.h.jpa.internal.util.LogHelper.logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+02-05-2020 14:12:26.808 [main] INFO  org.hibernate.Version.logVersion - HHH000412: Hibernate ORM core version 5.4.12.Final
+02-05-2020 14:12:27.012 [main] INFO  o.h.annotations.common.Version.<clinit> - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+02-05-2020 14:12:27.137 [main] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Starting...
+02-05-2020 14:12:27.293 [main] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Start completed.
+02-05-2020 14:12:27.308 [main] INFO  org.hibernate.dialect.Dialect.<init> - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL9Dialect
+02-05-2020 14:12:28.525 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator.initiateService - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+02-05-2020 14:12:28.534 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+02-05-2020 14:12:29.507 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+02-05-2020 14:12:29.632 [main] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping.initHandlerMethods - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+02-05-2020 14:12:29.741 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor.initialize - Initializing ExecutorService 'applicationTaskExecutor'
+02-05-2020 14:12:29.835 [main] INFO  o.s.s.c.ThreadPoolTaskScheduler.initialize - Initializing ExecutorService 'taskScheduler'
+02-05-2020 14:12:29.866 [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper.start - Context refreshed
+02-05-2020 14:12:29.882 [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper.start - Found 1 custom documentation plugin(s)
+02-05-2020 14:12:29.944 [main] INFO  s.d.s.w.s.ApiListingReferenceScanner.scan - Scanning for api listing references
+02-05-2020 14:12:30.069 [main] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: getFutureAppointmentsUsingGET_1
+02-05-2020 14:12:30.163 [main] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_1
+02-05-2020 14:12:30.179 [main] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_1
+02-05-2020 14:12:30.179 [main] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: getByIdUsingGET_1
+02-05-2020 14:12:30.194 [main] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: patchUsingPATCH_1
+02-05-2020 14:12:30.194 [main] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_2
+02-05-2020 14:12:30.194 [main] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_1
+02-05-2020 14:12:30.225 [main] INFO  o.a.coyote.http11.Http11NioProtocol.log - Starting ProtocolHandler ["http-nio-8081"]
+02-05-2020 14:12:30.427 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer.start - Tomcat started on port(s): 8081 (http) with context path ''
+02-05-2020 14:12:30.430 [main] INFO  f.p.health.FiipracticApplication.logStarted - Started FiipracticApplication in 6.875 seconds (JVM running for 8.551)
+02-05-2020 14:12:37.606 [http-nio-8081-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring DispatcherServlet 'dispatcherServlet'
+02-05-2020 14:12:37.606 [http-nio-8081-exec-2] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Initializing Servlet 'dispatcherServlet'
+02-05-2020 14:12:37.618 [http-nio-8081-exec-2] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Completed initialization in 12 ms
+02-05-2020 14:13:22.564 [http-nio-8081-exec-8] INFO  f.p.h.b.c.AppointmentController.sendNewAppointmentDoctorEmail - Email New appointment created has been sent successfully
+02-05-2020 14:13:33.271 [http-nio-8081-exec-8] INFO  f.p.h.b.c.AppointmentController.sendNewAppointmentPatientEmail - Email New appointment created has been sent successfully
+02-05-2020 14:13:33.272 [http-nio-8081-exec-8] INFO  f.p.h.b.c.AppointmentController.save - Appointment with id 3 was created
+02-05-2020 14:17:40.168 [main] INFO  f.p.health.FiipracticApplication.logStarting - Starting FiipracticApplication on DESKTOP-3JQD55O with PID 920 (D:\facultate\An3\yonder\proiect_final\target\classes started by Georgiana in D:\facultate\An3\yonder\proiect_final)
+02-05-2020 14:17:40.168 [main] INFO  f.p.health.FiipracticApplication.logStartupProfileInfo - The following profiles are active: dev
+02-05-2020 14:17:41.718 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+02-05-2020 14:17:41.776 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Finished Spring Data repository scanning in 61ms. Found 3 JPA repository interfaces.
+02-05-2020 14:17:42.749 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer.initialize - Tomcat initialized with port(s): 8081 (http)
+02-05-2020 14:17:42.760 [main] INFO  o.a.coyote.http11.Http11NioProtocol.log - Initializing ProtocolHandler ["http-nio-8081"]
+02-05-2020 14:17:42.762 [main] INFO  o.a.catalina.core.StandardService.log - Starting service [Tomcat]
+02-05-2020 14:17:42.762 [main] INFO  o.a.catalina.core.StandardEngine.log - Starting Servlet engine: [Apache Tomcat/9.0.31]
+02-05-2020 14:17:43.096 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring embedded WebApplicationContext
+02-05-2020 14:17:43.096 [main] INFO  o.s.web.context.ContextLoader.prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 2834 ms
+02-05-2020 14:17:43.364 [main] INFO  o.h.jpa.internal.util.LogHelper.logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+02-05-2020 14:17:43.477 [main] INFO  org.hibernate.Version.logVersion - HHH000412: Hibernate ORM core version 5.4.12.Final
+02-05-2020 14:17:43.681 [main] INFO  o.h.annotations.common.Version.<clinit> - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+02-05-2020 14:17:43.758 [main] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Starting...
+02-05-2020 14:17:43.883 [main] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Start completed.
+02-05-2020 14:17:43.899 [main] INFO  org.hibernate.dialect.Dialect.<init> - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL9Dialect
+02-05-2020 14:17:45.006 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator.initiateService - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+02-05-2020 14:17:45.006 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+02-05-2020 14:17:45.905 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+02-05-2020 14:17:46.024 [main] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping.initHandlerMethods - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+02-05-2020 14:17:46.134 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor.initialize - Initializing ExecutorService 'applicationTaskExecutor'
+02-05-2020 14:17:46.227 [main] INFO  o.s.s.c.ThreadPoolTaskScheduler.initialize - Initializing ExecutorService 'taskScheduler'
+02-05-2020 14:17:46.275 [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper.start - Context refreshed
+02-05-2020 14:17:46.289 [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper.start - Found 1 custom documentation plugin(s)
+02-05-2020 14:17:46.358 [main] INFO  s.d.s.w.s.ApiListingReferenceScanner.scan - Scanning for api listing references
+02-05-2020 14:17:46.667 [main] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: getFutureAppointmentsUsingGET_1
+02-05-2020 14:17:46.761 [main] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_1
+02-05-2020 14:17:46.761 [main] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_1
+02-05-2020 14:17:46.776 [main] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: getByIdUsingGET_1
+02-05-2020 14:17:46.776 [main] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: patchUsingPATCH_1
+02-05-2020 14:17:46.792 [main] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_2
+02-05-2020 14:17:46.792 [main] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_1
+02-05-2020 14:17:46.808 [main] INFO  o.a.coyote.http11.Http11NioProtocol.log - Starting ProtocolHandler ["http-nio-8081"]
+02-05-2020 14:17:46.839 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer.start - Tomcat started on port(s): 8081 (http) with context path ''
+02-05-2020 14:17:46.839 [main] INFO  f.p.health.FiipracticApplication.logStarted - Started FiipracticApplication in 7.653 seconds (JVM running for 9.264)
+02-05-2020 14:18:42.989 [http-nio-8081-exec-4] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring DispatcherServlet 'dispatcherServlet'
+02-05-2020 14:18:42.990 [http-nio-8081-exec-4] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Initializing Servlet 'dispatcherServlet'
+02-05-2020 14:18:42.997 [http-nio-8081-exec-4] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Completed initialization in 7 ms
+02-05-2020 14:19:16.505 [http-nio-8081-exec-8] INFO  f.p.h.b.c.AppointmentController.sendNewAppointmentDoctorEmail - Email New appointment created has been sent successfully
+02-05-2020 14:19:27.196 [http-nio-8081-exec-8] INFO  f.p.h.b.c.AppointmentController.sendNewAppointmentPatientEmail - Email New appointment created has been sent successfully
+02-05-2020 14:19:27.196 [http-nio-8081-exec-8] INFO  f.p.h.b.c.AppointmentController.save - Appointment with id 4 was created
+02-05-2020 14:23:36.027 [main] INFO  f.p.health.FiipracticApplication.logStarting - Starting FiipracticApplication on DESKTOP-3JQD55O with PID 2816 (D:\facultate\An3\yonder\proiect_final\target\classes started by Georgiana in D:\facultate\An3\yonder\proiect_final)
+02-05-2020 14:23:36.033 [main] INFO  f.p.health.FiipracticApplication.logStartupProfileInfo - The following profiles are active: dev
+02-05-2020 14:23:37.426 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+02-05-2020 14:23:37.523 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Finished Spring Data repository scanning in 85ms. Found 3 JPA repository interfaces.
+02-05-2020 14:23:38.064 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer.initialize - Tomcat initialized with port(s): 8081 (http)
+02-05-2020 14:23:38.072 [main] INFO  o.a.coyote.http11.Http11NioProtocol.log - Initializing ProtocolHandler ["http-nio-8081"]
+02-05-2020 14:23:38.073 [main] INFO  o.a.catalina.core.StandardService.log - Starting service [Tomcat]
+02-05-2020 14:23:38.073 [main] INFO  o.a.catalina.core.StandardEngine.log - Starting Servlet engine: [Apache Tomcat/9.0.31]
+02-05-2020 14:23:38.198 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring embedded WebApplicationContext
+02-05-2020 14:23:38.198 [main] INFO  o.s.web.context.ContextLoader.prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 2099 ms
+02-05-2020 14:23:38.382 [main] INFO  o.h.jpa.internal.util.LogHelper.logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+02-05-2020 14:23:38.476 [main] INFO  org.hibernate.Version.logVersion - HHH000412: Hibernate ORM core version 5.4.12.Final
+02-05-2020 14:23:38.686 [main] INFO  o.h.annotations.common.Version.<clinit> - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+02-05-2020 14:23:38.780 [main] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Starting...
+02-05-2020 14:23:38.908 [main] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Start completed.
+02-05-2020 14:23:38.923 [main] INFO  org.hibernate.dialect.Dialect.<init> - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL9Dialect
+02-05-2020 14:23:40.090 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator.initiateService - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+02-05-2020 14:23:40.102 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+02-05-2020 14:23:41.010 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+02-05-2020 14:23:41.135 [main] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping.initHandlerMethods - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+02-05-2020 14:23:41.280 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor.initialize - Initializing ExecutorService 'applicationTaskExecutor'
+02-05-2020 14:23:41.420 [main] INFO  o.s.s.c.ThreadPoolTaskScheduler.initialize - Initializing ExecutorService 'taskScheduler'
+02-05-2020 14:23:41.444 [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper.start - Context refreshed
+02-05-2020 14:23:41.460 [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper.start - Found 1 custom documentation plugin(s)
+02-05-2020 14:23:41.523 [main] INFO  s.d.s.w.s.ApiListingReferenceScanner.scan - Scanning for api listing references
+02-05-2020 14:23:41.827 [main] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: getFutureAppointmentsUsingGET_1
+02-05-2020 14:23:41.936 [main] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_1
+02-05-2020 14:23:41.936 [main] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_1
+02-05-2020 14:23:41.952 [main] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: getByIdUsingGET_1
+02-05-2020 14:23:41.952 [main] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: patchUsingPATCH_1
+02-05-2020 14:23:41.952 [main] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_2
+02-05-2020 14:23:41.968 [main] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_1
+02-05-2020 14:23:41.983 [main] INFO  o.a.coyote.http11.Http11NioProtocol.log - Starting ProtocolHandler ["http-nio-8081"]
+02-05-2020 14:23:41.999 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer.start - Tomcat started on port(s): 8081 (http) with context path ''
+02-05-2020 14:23:41.999 [main] INFO  f.p.health.FiipracticApplication.logStarted - Started FiipracticApplication in 6.725 seconds (JVM running for 8.238)
+02-05-2020 14:24:28.739 [http-nio-8081-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring DispatcherServlet 'dispatcherServlet'
+02-05-2020 14:24:28.740 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Initializing Servlet 'dispatcherServlet'
+02-05-2020 14:24:28.747 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Completed initialization in 7 ms
+02-05-2020 14:25:11.421 [http-nio-8081-exec-5] INFO  f.p.h.b.c.AppointmentController.sendNewAppointmentDoctorEmail - Email New appointment created has been sent successfully
+02-05-2020 14:25:22.122 [http-nio-8081-exec-5] INFO  f.p.h.b.c.AppointmentController.sendNewAppointmentPatientEmail - Email New appointment created has been sent successfully
+02-05-2020 14:25:22.122 [http-nio-8081-exec-5] INFO  f.p.h.b.c.AppointmentController.save - Appointment with id 5 was created
+03-05-2020 15:30:46.600 [main] INFO  f.p.health.FiipracticApplication.logStarting - Starting FiipracticApplication on DESKTOP-3JQD55O with PID 11880 (D:\facultate\An3\yonder\proiect_final\target\classes started by Georgiana in D:\facultate\An3\yonder\proiect_final)
+03-05-2020 15:30:46.685 [main] INFO  f.p.health.FiipracticApplication.logStartupProfileInfo - The following profiles are active: dev
+03-05-2020 15:30:49.432 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+03-05-2020 15:30:49.580 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Finished Spring Data repository scanning in 121ms. Found 3 JPA repository interfaces.
+03-05-2020 15:30:50.462 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer.initialize - Tomcat initialized with port(s): 8081 (http)
+03-05-2020 15:30:50.472 [main] INFO  o.a.coyote.http11.Http11NioProtocol.log - Initializing ProtocolHandler ["http-nio-8081"]
+03-05-2020 15:30:50.473 [main] INFO  o.a.catalina.core.StandardService.log - Starting service [Tomcat]
+03-05-2020 15:30:50.473 [main] INFO  o.a.catalina.core.StandardEngine.log - Starting Servlet engine: [Apache Tomcat/9.0.31]
+03-05-2020 15:30:51.130 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring embedded WebApplicationContext
+03-05-2020 15:30:51.130 [main] INFO  o.s.web.context.ContextLoader.prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 4183 ms
+03-05-2020 15:30:51.421 [main] INFO  o.h.jpa.internal.util.LogHelper.logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+03-05-2020 15:30:51.558 [main] INFO  org.hibernate.Version.logVersion - HHH000412: Hibernate ORM core version 5.4.12.Final
+03-05-2020 15:30:51.929 [main] INFO  o.h.annotations.common.Version.<clinit> - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+03-05-2020 15:30:52.212 [main] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Starting...
+03-05-2020 15:30:52.790 [main] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Start completed.
+03-05-2020 15:30:52.862 [main] INFO  org.hibernate.dialect.Dialect.<init> - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL9Dialect
+03-05-2020 15:30:55.453 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator.initiateService - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+03-05-2020 15:30:55.461 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+03-05-2020 15:30:57.192 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+03-05-2020 15:30:57.507 [main] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping.initHandlerMethods - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+03-05-2020 15:30:57.950 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor.initialize - Initializing ExecutorService 'applicationTaskExecutor'
+03-05-2020 15:30:58.102 [main] INFO  o.s.s.c.ThreadPoolTaskScheduler.initialize - Initializing ExecutorService 'taskScheduler'
+03-05-2020 15:30:58.135 [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper.start - Context refreshed
+03-05-2020 15:30:58.159 [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper.start - Found 1 custom documentation plugin(s)
+03-05-2020 15:30:58.246 [main] INFO  s.d.s.w.s.ApiListingReferenceScanner.scan - Scanning for api listing references
+03-05-2020 15:30:58.602 [main] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: getFutureAppointmentsUsingGET_1
+03-05-2020 15:30:58.731 [main] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_1
+03-05-2020 15:30:58.742 [main] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_1
+03-05-2020 15:30:58.746 [main] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: getByIdUsingGET_1
+03-05-2020 15:30:58.758 [main] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: patchUsingPATCH_1
+03-05-2020 15:30:58.766 [main] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_2
+03-05-2020 15:30:58.771 [main] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_1
+03-05-2020 15:30:58.848 [main] INFO  o.a.coyote.http11.Http11NioProtocol.log - Starting ProtocolHandler ["http-nio-8081"]
+03-05-2020 15:30:58.905 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer.start - Tomcat started on port(s): 8081 (http) with context path ''
+03-05-2020 15:30:58.925 [main] INFO  f.p.health.FiipracticApplication.logStarted - Started FiipracticApplication in 14.09 seconds (JVM running for 21.08)
+03-05-2020 15:31:00.025 [http-nio-8081-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring DispatcherServlet 'dispatcherServlet'
+03-05-2020 15:31:00.025 [http-nio-8081-exec-2] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Initializing Servlet 'dispatcherServlet'
+03-05-2020 15:31:00.037 [http-nio-8081-exec-2] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Completed initialization in 12 ms
+03-05-2020 15:31:32.589 [http-nio-8081-exec-10] INFO  f.p.h.b.controller.DoctorController.delete - Doctor entity with id 1 was successfully deleted.
+03-05-2020 15:31:37.672 [http-nio-8081-exec-9] INFO  f.p.h.b.controller.DoctorController.delete - Doctor entity with id 2 was successfully deleted.
+03-05-2020 15:31:41.735 [http-nio-8081-exec-8] INFO  f.p.h.b.controller.DoctorController.delete - Doctor entity with id 3 was successfully deleted.
+03-05-2020 15:31:45.285 [http-nio-8081-exec-2] INFO  f.p.h.b.controller.DoctorController.delete - Doctor entity with id 4 was successfully deleted.
+03-05-2020 15:32:05.269 [http-nio-8081-exec-9] INFO  f.p.h.b.controller.PatientController.delete - Patient entity with id 1 was successfully deleted
+03-05-2020 15:33:32.854 [main] INFO  f.p.health.FiipracticApplication.logStarting - Starting FiipracticApplication on DESKTOP-3JQD55O with PID 12416 (D:\facultate\An3\yonder\proiect_final\target\classes started by Georgiana in D:\facultate\An3\yonder\proiect_final)
+03-05-2020 15:33:32.859 [main] INFO  f.p.health.FiipracticApplication.logStartupProfileInfo - The following profiles are active: dev
+03-05-2020 15:33:34.758 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+03-05-2020 15:33:34.850 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Finished Spring Data repository scanning in 79ms. Found 3 JPA repository interfaces.
+03-05-2020 15:33:35.489 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer.initialize - Tomcat initialized with port(s): 8081 (http)
+03-05-2020 15:33:35.496 [main] INFO  o.a.coyote.http11.Http11NioProtocol.log - Initializing ProtocolHandler ["http-nio-8081"]
+03-05-2020 15:33:35.497 [main] INFO  o.a.catalina.core.StandardService.log - Starting service [Tomcat]
+03-05-2020 15:33:35.498 [main] INFO  o.a.catalina.core.StandardEngine.log - Starting Servlet engine: [Apache Tomcat/9.0.31]
+03-05-2020 15:33:35.613 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring embedded WebApplicationContext
+03-05-2020 15:33:35.614 [main] INFO  o.s.web.context.ContextLoader.prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 2674 ms
+03-05-2020 15:33:35.803 [main] INFO  o.h.jpa.internal.util.LogHelper.logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+03-05-2020 15:33:35.883 [main] INFO  org.hibernate.Version.logVersion - HHH000412: Hibernate ORM core version 5.4.12.Final
+03-05-2020 15:33:36.074 [main] INFO  o.h.annotations.common.Version.<clinit> - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+03-05-2020 15:33:36.176 [main] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Starting...
+03-05-2020 15:33:36.310 [main] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Start completed.
+03-05-2020 15:33:36.326 [main] INFO  org.hibernate.dialect.Dialect.<init> - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL9Dialect
+03-05-2020 15:33:38.894 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator.initiateService - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+03-05-2020 15:33:38.902 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+03-05-2020 15:33:39.871 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+03-05-2020 15:33:39.996 [main] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping.initHandlerMethods - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+03-05-2020 15:33:40.108 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor.initialize - Initializing ExecutorService 'applicationTaskExecutor'
+03-05-2020 15:33:40.231 [main] INFO  o.s.s.c.ThreadPoolTaskScheduler.initialize - Initializing ExecutorService 'taskScheduler'
+03-05-2020 15:33:40.263 [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper.start - Context refreshed
+03-05-2020 15:33:40.277 [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper.start - Found 1 custom documentation plugin(s)
+03-05-2020 15:33:40.351 [main] INFO  s.d.s.w.s.ApiListingReferenceScanner.scan - Scanning for api listing references
+03-05-2020 15:33:40.467 [main] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: getFutureAppointmentsUsingGET_1
+03-05-2020 15:33:40.579 [main] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_1
+03-05-2020 15:33:40.592 [main] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_1
+03-05-2020 15:33:40.599 [main] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: getByIdUsingGET_1
+03-05-2020 15:33:40.613 [main] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: patchUsingPATCH_1
+03-05-2020 15:33:40.618 [main] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_2
+03-05-2020 15:33:40.640 [main] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_1
+03-05-2020 15:33:40.663 [main] INFO  o.a.coyote.http11.Http11NioProtocol.log - Starting ProtocolHandler ["http-nio-8081"]
+03-05-2020 15:33:40.864 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer.start - Tomcat started on port(s): 8081 (http) with context path ''
+03-05-2020 15:33:40.868 [main] INFO  f.p.health.FiipracticApplication.logStarted - Started FiipracticApplication in 8.744 seconds (JVM running for 10.449)
+03-05-2020 15:33:52.337 [http-nio-8081-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring DispatcherServlet 'dispatcherServlet'
+03-05-2020 15:33:52.337 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Initializing Servlet 'dispatcherServlet'
+03-05-2020 15:33:52.344 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Completed initialization in 7 ms
+03-05-2020 15:35:13.778 [main] INFO  f.p.health.FiipracticApplication.logStarting - Starting FiipracticApplication on DESKTOP-3JQD55O with PID 6772 (D:\facultate\An3\yonder\proiect_final\target\classes started by Georgiana in D:\facultate\An3\yonder\proiect_final)
+03-05-2020 15:35:13.783 [main] INFO  f.p.health.FiipracticApplication.logStartupProfileInfo - The following profiles are active: dev
+03-05-2020 15:35:15.406 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+03-05-2020 15:35:15.495 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Finished Spring Data repository scanning in 71ms. Found 3 JPA repository interfaces.
+03-05-2020 15:35:16.024 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer.initialize - Tomcat initialized with port(s): 8081 (http)
+03-05-2020 15:35:16.031 [main] INFO  o.a.coyote.http11.Http11NioProtocol.log - Initializing ProtocolHandler ["http-nio-8081"]
+03-05-2020 15:35:16.032 [main] INFO  o.a.catalina.core.StandardService.log - Starting service [Tomcat]
+03-05-2020 15:35:16.032 [main] INFO  o.a.catalina.core.StandardEngine.log - Starting Servlet engine: [Apache Tomcat/9.0.31]
+03-05-2020 15:35:16.247 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring embedded WebApplicationContext
+03-05-2020 15:35:16.248 [main] INFO  o.s.web.context.ContextLoader.prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 2258 ms
+03-05-2020 15:35:16.440 [main] INFO  o.h.jpa.internal.util.LogHelper.logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+03-05-2020 15:35:16.562 [main] INFO  org.hibernate.Version.logVersion - HHH000412: Hibernate ORM core version 5.4.12.Final
+03-05-2020 15:35:16.901 [main] INFO  o.h.annotations.common.Version.<clinit> - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+03-05-2020 15:35:17.047 [main] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Starting...
+03-05-2020 15:35:17.233 [main] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Start completed.
+03-05-2020 15:35:17.261 [main] INFO  org.hibernate.dialect.Dialect.<init> - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL9Dialect
+03-05-2020 15:35:19.521 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator.initiateService - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+03-05-2020 15:35:19.531 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+03-05-2020 15:35:20.638 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+03-05-2020 15:35:20.797 [main] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping.initHandlerMethods - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+03-05-2020 15:35:20.915 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor.initialize - Initializing ExecutorService 'applicationTaskExecutor'
+03-05-2020 15:35:21.030 [main] INFO  o.s.s.c.ThreadPoolTaskScheduler.initialize - Initializing ExecutorService 'taskScheduler'
+03-05-2020 15:35:21.062 [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper.start - Context refreshed
+03-05-2020 15:35:21.076 [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper.start - Found 1 custom documentation plugin(s)
+03-05-2020 15:35:21.158 [main] INFO  s.d.s.w.s.ApiListingReferenceScanner.scan - Scanning for api listing references
+03-05-2020 15:35:21.530 [main] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: getFutureAppointmentsUsingGET_1
+03-05-2020 15:35:21.668 [main] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_1
+03-05-2020 15:35:21.679 [main] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_1
+03-05-2020 15:35:21.685 [main] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: getByIdUsingGET_1
+03-05-2020 15:35:21.699 [main] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: patchUsingPATCH_1
+03-05-2020 15:35:21.704 [main] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_2
+03-05-2020 15:35:21.711 [main] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_1
+03-05-2020 15:35:21.733 [main] INFO  o.a.coyote.http11.Http11NioProtocol.log - Starting ProtocolHandler ["http-nio-8081"]
+03-05-2020 15:35:21.772 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer.start - Tomcat started on port(s): 8081 (http) with context path ''
+03-05-2020 15:35:21.774 [main] INFO  f.p.health.FiipracticApplication.logStarted - Started FiipracticApplication in 8.919 seconds (JVM running for 11.076)
+09-05-2020 22:56:32.247 [main] INFO  f.p.health.FiipracticApplication.logStarting - Starting FiipracticApplication on DESKTOP-3JQD55O with PID 16784 (D:\facultate\An3\yonder\proiect_final\target\classes started by Georgiana in D:\facultate\An3\yonder\proiect_final)
+09-05-2020 22:56:32.258 [main] INFO  f.p.health.FiipracticApplication.logStartupProfileInfo - The following profiles are active: dev
+09-05-2020 22:56:35.265 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+09-05-2020 22:56:35.626 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Finished Spring Data repository scanning in 315ms. Found 3 JPA repository interfaces.
+09-05-2020 22:56:37.363 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer.initialize - Tomcat initialized with port(s): 8081 (http)
+09-05-2020 22:56:37.393 [main] INFO  o.a.coyote.http11.Http11NioProtocol.log - Initializing ProtocolHandler ["http-nio-8081"]
+09-05-2020 22:56:37.393 [main] INFO  o.a.catalina.core.StandardService.log - Starting service [Tomcat]
+09-05-2020 22:56:37.397 [main] INFO  o.a.catalina.core.StandardEngine.log - Starting Servlet engine: [Apache Tomcat/9.0.31]
+09-05-2020 22:56:37.903 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring embedded WebApplicationContext
+09-05-2020 22:56:37.903 [main] INFO  o.s.web.context.ContextLoader.prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 5481 ms
+09-05-2020 22:56:38.482 [main] INFO  o.h.jpa.internal.util.LogHelper.logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+09-05-2020 22:56:38.841 [main] INFO  org.hibernate.Version.logVersion - HHH000412: Hibernate ORM core version 5.4.12.Final
+09-05-2020 22:56:39.670 [main] INFO  o.h.annotations.common.Version.<clinit> - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+09-05-2020 22:56:40.062 [main] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Starting...
+09-05-2020 22:56:40.587 [main] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Start completed.
+09-05-2020 22:56:40.626 [main] INFO  org.hibernate.dialect.Dialect.<init> - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL9Dialect
+09-05-2020 22:56:45.624 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator.initiateService - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+09-05-2020 22:56:45.644 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+09-05-2020 22:56:49.118 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+09-05-2020 22:56:49.665 [main] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping.initHandlerMethods - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+09-05-2020 22:56:50.190 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor.initialize - Initializing ExecutorService 'applicationTaskExecutor'
+09-05-2020 22:56:50.428 [main] INFO  o.s.s.c.ThreadPoolTaskScheduler.initialize - Initializing ExecutorService 'taskScheduler'
+09-05-2020 22:56:50.500 [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper.start - Context refreshed
+09-05-2020 22:56:50.551 [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper.start - Found 1 custom documentation plugin(s)
+09-05-2020 22:56:50.859 [main] INFO  s.d.s.w.s.ApiListingReferenceScanner.scan - Scanning for api listing references
+09-05-2020 22:56:51.624 [main] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: getFutureAppointmentsUsingGET_1
+09-05-2020 22:56:51.959 [main] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_1
+09-05-2020 22:56:51.976 [main] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_1
+09-05-2020 22:56:51.985 [main] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: getByIdUsingGET_1
+09-05-2020 22:56:52.006 [main] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: patchUsingPATCH_1
+09-05-2020 22:56:52.017 [main] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_2
+09-05-2020 22:56:52.025 [main] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_1
+09-05-2020 22:56:52.090 [main] INFO  o.a.coyote.http11.Http11NioProtocol.log - Starting ProtocolHandler ["http-nio-8081"]
+09-05-2020 22:56:52.171 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer.start - Tomcat started on port(s): 8081 (http) with context path ''
+09-05-2020 22:56:52.196 [main] INFO  f.p.health.FiipracticApplication.logStarted - Started FiipracticApplication in 21.823 seconds (JVM running for 25.289)
+09-05-2020 22:57:31.297 [http-nio-8081-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring DispatcherServlet 'dispatcherServlet'
+09-05-2020 22:57:31.298 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Initializing Servlet 'dispatcherServlet'
+09-05-2020 22:57:31.318 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Completed initialization in 20 ms
+09-05-2020 23:00:07.592 [main] INFO  f.p.health.FiipracticApplication.logStarting - Starting FiipracticApplication on DESKTOP-3JQD55O with PID 15624 (D:\facultate\An3\yonder\proiect_final\target\classes started by Georgiana in D:\facultate\An3\yonder\proiect_final)
+09-05-2020 23:00:07.599 [main] INFO  f.p.health.FiipracticApplication.logStartupProfileInfo - The following profiles are active: dev
+09-05-2020 23:00:10.162 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+09-05-2020 23:00:10.331 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Finished Spring Data repository scanning in 146ms. Found 3 JPA repository interfaces.
+09-05-2020 23:00:11.457 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer.initialize - Tomcat initialized with port(s): 8081 (http)
+09-05-2020 23:00:11.471 [main] INFO  o.a.coyote.http11.Http11NioProtocol.log - Initializing ProtocolHandler ["http-nio-8081"]
+09-05-2020 23:00:11.475 [main] INFO  o.a.catalina.core.StandardService.log - Starting service [Tomcat]
+09-05-2020 23:00:11.476 [main] INFO  o.a.catalina.core.StandardEngine.log - Starting Servlet engine: [Apache Tomcat/9.0.31]
+09-05-2020 23:00:11.823 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring embedded WebApplicationContext
+09-05-2020 23:00:11.827 [main] INFO  o.s.web.context.ContextLoader.prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 3988 ms
+09-05-2020 23:00:12.168 [main] INFO  o.h.jpa.internal.util.LogHelper.logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+09-05-2020 23:00:12.320 [main] INFO  org.hibernate.Version.logVersion - HHH000412: Hibernate ORM core version 5.4.12.Final
+09-05-2020 23:00:12.800 [main] INFO  o.h.annotations.common.Version.<clinit> - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+09-05-2020 23:00:12.982 [main] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Starting...
+09-05-2020 23:00:13.236 [main] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Start completed.
+09-05-2020 23:00:13.251 [main] INFO  org.hibernate.dialect.Dialect.<init> - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL9Dialect
+09-05-2020 23:00:14.782 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator.initiateService - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+09-05-2020 23:00:14.791 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+09-05-2020 23:00:16.601 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+09-05-2020 23:00:16.960 [main] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping.initHandlerMethods - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+09-05-2020 23:00:17.217 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor.initialize - Initializing ExecutorService 'applicationTaskExecutor'
+09-05-2020 23:00:17.482 [main] INFO  o.s.s.c.ThreadPoolTaskScheduler.initialize - Initializing ExecutorService 'taskScheduler'
+09-05-2020 23:00:17.550 [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper.start - Context refreshed
+09-05-2020 23:00:17.583 [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper.start - Found 1 custom documentation plugin(s)
+09-05-2020 23:00:17.788 [main] INFO  s.d.s.w.s.ApiListingReferenceScanner.scan - Scanning for api listing references
+09-05-2020 23:00:18.493 [main] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: getFutureAppointmentsUsingGET_1
+09-05-2020 23:00:18.777 [main] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_1
+09-05-2020 23:00:18.801 [main] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_1
+09-05-2020 23:00:18.811 [main] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: getByIdUsingGET_1
+09-05-2020 23:00:18.830 [main] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: patchUsingPATCH_1
+09-05-2020 23:00:18.841 [main] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_2
+09-05-2020 23:00:18.852 [main] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_1
+09-05-2020 23:00:18.908 [main] INFO  o.a.coyote.http11.Http11NioProtocol.log - Starting ProtocolHandler ["http-nio-8081"]
+09-05-2020 23:00:18.977 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer.start - Tomcat started on port(s): 8081 (http) with context path ''
+09-05-2020 23:00:18.985 [main] INFO  f.p.health.FiipracticApplication.logStarted - Started FiipracticApplication in 12.715 seconds (JVM running for 15.56)
+09-05-2020 23:00:26.766 [http-nio-8081-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring DispatcherServlet 'dispatcherServlet'
+09-05-2020 23:00:26.766 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Initializing Servlet 'dispatcherServlet'
+09-05-2020 23:00:26.787 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Completed initialization in 21 ms
+09-05-2020 23:02:54.140 [http-nio-8081-exec-1] INFO  f.p.h.b.c.AppointmentController.sendNewDoctorEmail - Email Doctor entity created has been sent successfully
+09-05-2020 23:02:54.141 [http-nio-8081-exec-1] INFO  f.p.h.b.controller.DoctorController.save - Doctor entity with id 1  was successfully created.
+09-05-2020 23:20:18.727 [main] INFO  f.p.health.FiipracticApplication.logStarting - Starting FiipracticApplication on DESKTOP-3JQD55O with PID 7348 (D:\facultate\An3\yonder\proiect_final\target\classes started by Georgiana in D:\facultate\An3\yonder\proiect_final)
+09-05-2020 23:20:18.764 [main] INFO  f.p.health.FiipracticApplication.logStartupProfileInfo - The following profiles are active: dev
+09-05-2020 23:20:25.239 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+09-05-2020 23:20:25.623 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Finished Spring Data repository scanning in 311ms. Found 3 JPA repository interfaces.
+09-05-2020 23:20:28.101 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer.initialize - Tomcat initialized with port(s): 8081 (http)
+09-05-2020 23:20:28.123 [main] INFO  o.a.coyote.http11.Http11NioProtocol.log - Initializing ProtocolHandler ["http-nio-8081"]
+09-05-2020 23:20:28.125 [main] INFO  o.a.catalina.core.StandardService.log - Starting service [Tomcat]
+09-05-2020 23:20:28.125 [main] INFO  o.a.catalina.core.StandardEngine.log - Starting Servlet engine: [Apache Tomcat/9.0.31]
+09-05-2020 23:20:28.434 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring embedded WebApplicationContext
+09-05-2020 23:20:28.435 [main] INFO  o.s.web.context.ContextLoader.prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 9471 ms
+09-05-2020 23:20:28.889 [main] INFO  o.h.jpa.internal.util.LogHelper.logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+09-05-2020 23:20:29.209 [main] INFO  org.hibernate.Version.logVersion - HHH000412: Hibernate ORM core version 5.4.12.Final
+09-05-2020 23:20:29.682 [main] INFO  o.h.annotations.common.Version.<clinit> - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+09-05-2020 23:20:30.041 [main] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Starting...
+09-05-2020 23:20:30.465 [main] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Start completed.
+09-05-2020 23:20:30.516 [main] INFO  org.hibernate.dialect.Dialect.<init> - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL9Dialect
+09-05-2020 23:20:33.288 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator.initiateService - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+09-05-2020 23:20:33.308 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+09-05-2020 23:20:37.230 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+09-05-2020 23:20:37.910 [main] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping.initHandlerMethods - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+09-05-2020 23:20:38.366 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor.initialize - Initializing ExecutorService 'applicationTaskExecutor'
+09-05-2020 23:20:38.720 [main] INFO  o.s.s.c.ThreadPoolTaskScheduler.initialize - Initializing ExecutorService 'taskScheduler'
+09-05-2020 23:20:38.820 [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper.start - Context refreshed
+09-05-2020 23:20:38.863 [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper.start - Found 1 custom documentation plugin(s)
+09-05-2020 23:20:39.047 [main] INFO  s.d.s.w.s.ApiListingReferenceScanner.scan - Scanning for api listing references
+09-05-2020 23:20:39.821 [main] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: getFutureAppointmentsUsingGET_1
+09-05-2020 23:20:40.297 [main] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_1
+09-05-2020 23:20:40.316 [main] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_1
+09-05-2020 23:20:40.331 [main] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: getByIdUsingGET_1
+09-05-2020 23:20:40.354 [main] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: patchUsingPATCH_1
+09-05-2020 23:20:40.360 [main] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_2
+09-05-2020 23:20:40.370 [main] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_1
+09-05-2020 23:20:40.411 [main] INFO  o.a.coyote.http11.Http11NioProtocol.log - Starting ProtocolHandler ["http-nio-8081"]
+09-05-2020 23:20:40.451 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer.start - Tomcat started on port(s): 8081 (http) with context path ''
+09-05-2020 23:20:40.455 [main] INFO  f.p.health.FiipracticApplication.logStarted - Started FiipracticApplication in 24.295 seconds (JVM running for 28.858)
+09-05-2020 23:20:44.694 [http-nio-8081-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring DispatcherServlet 'dispatcherServlet'
+09-05-2020 23:20:44.695 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Initializing Servlet 'dispatcherServlet'
+09-05-2020 23:20:44.718 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Completed initialization in 22 ms
+09-05-2020 23:30:04.450 [main] INFO  f.p.health.FiipracticApplication.logStarting - Starting FiipracticApplication on DESKTOP-3JQD55O with PID 1012 (D:\facultate\An3\yonder\proiect_final\target\classes started by Georgiana in D:\facultate\An3\yonder\proiect_final)
+09-05-2020 23:30:04.493 [main] INFO  f.p.health.FiipracticApplication.logStartupProfileInfo - The following profiles are active: prod
+09-05-2020 23:30:06.561 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+09-05-2020 23:30:06.743 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Finished Spring Data repository scanning in 161ms. Found 3 JPA repository interfaces.
+09-05-2020 23:30:08.122 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer.initialize - Tomcat initialized with port(s): 8081 (http)
+09-05-2020 23:30:08.160 [main] INFO  o.a.coyote.http11.Http11NioProtocol.log - Initializing ProtocolHandler ["http-nio-8081"]
+09-05-2020 23:30:08.161 [main] INFO  o.a.catalina.core.StandardService.log - Starting service [Tomcat]
+09-05-2020 23:30:08.161 [main] INFO  o.a.catalina.core.StandardEngine.log - Starting Servlet engine: [Apache Tomcat/9.0.31]
+09-05-2020 23:30:08.484 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring embedded WebApplicationContext
+09-05-2020 23:30:08.485 [main] INFO  o.s.web.context.ContextLoader.prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 3806 ms
+09-05-2020 23:30:08.825 [main] INFO  o.h.jpa.internal.util.LogHelper.logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+09-05-2020 23:30:08.948 [main] INFO  org.hibernate.Version.logVersion - HHH000412: Hibernate ORM core version 5.4.12.Final
+09-05-2020 23:30:09.243 [main] INFO  o.h.annotations.common.Version.<clinit> - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+09-05-2020 23:30:09.387 [main] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Starting...
+09-05-2020 23:30:09.592 [main] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Start completed.
+09-05-2020 23:30:09.616 [main] INFO  org.hibernate.dialect.Dialect.<init> - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL9Dialect
+09-05-2020 23:30:11.083 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator.initiateService - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+09-05-2020 23:30:11.095 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+09-05-2020 23:30:13.194 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+09-05-2020 23:30:13.470 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor.initialize - Initializing ExecutorService 'applicationTaskExecutor'
+09-05-2020 23:30:13.822 [main] INFO  o.s.s.c.ThreadPoolTaskScheduler.initialize - Initializing ExecutorService 'taskScheduler'
+09-05-2020 23:30:13.913 [main] INFO  o.a.coyote.http11.Http11NioProtocol.log - Starting ProtocolHandler ["http-nio-8081"]
+09-05-2020 23:30:13.958 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer.start - Tomcat started on port(s): 8081 (http) with context path ''
+09-05-2020 23:30:13.962 [main] INFO  f.p.health.FiipracticApplication.logStarted - Started FiipracticApplication in 10.804 seconds (JVM running for 13.23)
+09-05-2020 23:30:32.000 [http-nio-8081-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring DispatcherServlet 'dispatcherServlet'
+09-05-2020 23:30:32.000 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Initializing Servlet 'dispatcherServlet'
+09-05-2020 23:30:32.016 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Completed initialization in 16 ms

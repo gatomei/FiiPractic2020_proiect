@@ -1,1 +1,5 @@
 28-04-2020 23:46:23.128 [scheduling-1] INFO  f.p.h.b.c.AppointmentTaskController.reportCurrentTime - Appointment with id 1 took place
+02-05-2020 14:12:30.591 [scheduling-1] INFO  f.p.h.b.c.AppointmentTaskController.reportCurrentTime - Appointment with id 2 took place
+02-05-2020 14:17:46.948 [scheduling-1] INFO  f.p.h.b.c.AppointmentTaskController.reportCurrentTime - Appointment with id 3 took place
+02-05-2020 14:22:46.822 [scheduling-1] INFO  f.p.h.b.c.AppointmentTaskController.reportCurrentTime - Appointment with id 4 took place
+03-05-2020 15:30:59.450 [scheduling-1] INFO  f.p.h.b.c.AppointmentTaskController.reportCurrentTime - Appointment with id 5 took place

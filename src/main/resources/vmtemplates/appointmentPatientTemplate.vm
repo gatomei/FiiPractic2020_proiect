@@ -4,7 +4,7 @@
 
 <div>
     <p>A new appointment was created at doctor ${doctor.getFirstName()} ${doctor.getLastName()} with cause ${cause}.
-        Appointment will take place on date ${date} at time ${time}</p>
+        Your appointment will take place on date ${date} at time ${time}</p>
     <br><br>
 
     <p>Kind regards,</p><br>

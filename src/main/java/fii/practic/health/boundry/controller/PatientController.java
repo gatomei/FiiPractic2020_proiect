@@ -1,8 +1,6 @@
 package fii.practic.health.boundry.controller;
 
-import fii.practic.health.boundry.dto.DoctorDTO;
 import fii.practic.health.boundry.dto.PatientDTO;
-import fii.practic.health.entity.model.Doctor;
 import fii.practic.health.entity.model.Patient;
 import fii.practic.health.control.service.DoctorService;
 import fii.practic.health.control.service.PatientService;
